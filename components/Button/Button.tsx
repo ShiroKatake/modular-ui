@@ -1,13 +1,17 @@
 import React from 'react';
 import { StyledButton } from './Button.styled';
 
-interface Props {
+export interface ButtonProps {
   children: React.ReactNode;
 }
 
-export const Button: React.FC<Props> = ({ children }) => {
+interface Props extends ButtonProps {
+  className?: string;
+}
+
+export const Button: React.FC<Props> = ({ className, children }) => {
   return (
-    <StyledButton>
+    <StyledButton className={className}>
       {children}
     </StyledButton>
   );
