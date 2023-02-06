@@ -1,17 +1,16 @@
 import React from 'react';
 import { StyledButton } from './Button.styled';
 
-export interface ButtonProps {
-  children: React.ReactNode;
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 }
 
 interface Props extends ButtonProps {
   className?: string;
 }
 
-export const Button: React.FC<Props> = ({ className, children }) => {
+export const Button: React.FC<Props> = ({ className, children, ...props }) => {
   return (
-    <StyledButton className={className}>
+    <StyledButton className={className} {...props}>
       {children}
     </StyledButton>
   );
