@@ -1,9 +1,26 @@
-import styled from 'styled-components';
+import Link from 'next/link';
+import styled, { css } from 'styled-components';
 
-export const StyledNav = styled.nav``;
+const resetStyle = css`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+`;
 
-export const StyledNavUl = styled.ul``;
+export const Nav = styled.nav``;
 
-export const StyledNavLi = styled.li``;
+export const NavUl = styled.ul`
+  ${resetStyle}
+`;
 
-export const StyledNavA = styled.a``; 
+export const NavLi = styled.li``;
+
+export const NavA = styled(Link)``;
+
+export const NestedNavUl = styled.ul`
+  ${resetStyle}
+`;
+
+export const NestedNavLi = styled.li``;
+
+export const NestedNavA = styled(Link)``;
